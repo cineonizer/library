@@ -43,13 +43,47 @@ h1 {
 }
 
 .title {
+    text-align: center;
     font-size: 1.75em;
-    margin: 40px 0 0;
+    margin: 30px 0 0;
 }
 
 .author {
+    text-align: center;
     font-size: 1.25em;
-    margin: 100px 0 0;
+    margin: 50px 0 0;
+}
+
+.pages {
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px auto;
+    width: 200px;
+}
+
+.delete-button {
+    height: 22px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.delete-button:hover {
+    opacity: 1;
+}
+
+.edit-button {
+    height: 22px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.edit-button:hover {
+    opacity: 1;
 }
 
 .add-button-container {
@@ -62,7 +96,7 @@ h1 {
     user-select: none;
 }
 
-.add-button {
+#add-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,7 +108,7 @@ h1 {
     background-color: #8ba888;
 }
 
-.add-button:hover {
+#add-button:hover {
     background-color: 819c7e;
 }
 
@@ -88,6 +122,7 @@ h1 {
     padding: 20px 12px;
     border-radius: 15px 15px 15px 15px;
     background-color: #c8aaa0;
+    user-select: none;
 }
 
 .close-container {

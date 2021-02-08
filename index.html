@@ -8,18 +8,24 @@
     <body>
         <h1>Digital Bibliomania</h1>
         <div class="main-container">
-            <div class="book">
-                <div class="title">Book Title</div>
-                <div class="author">Author</div>
-                <div class="pages">256 Pages</div>
+            <div class="book-container">
+                <div class="book">
+                    <div class="title">Lord of the Flies</div>
+                    <div class="author">Author</div>
+                    <div class="pages">256 Pages</div>
+                </div>
+                <div class="buttons">
+                    <img class="delete-button" src="images/trash.svg"/>
+                    <img class="edit-button" src="images/three-dots.svg"/>
+                </div>
             </div>
         </div>
         <div class="add-button-container">
-            <div class="add-button">+</div>
+            <div id="add-button">+</div>
         </div>
         <form class="form-container" autocomplete="off">
             <div class="close-container">
-                <button type="button">X</button>
+                <button id="close-button" type="button">X</button>
             </div>
             <label> Title
                 <input type="text" id="book-title">
@@ -42,7 +48,7 @@
                 </label>
             </div>
             <div class="submit-container">
-                <button type="button">Add</button>
+                <button id="submit-button" type="button">Submit</button>
             </div>
         </form>
 
