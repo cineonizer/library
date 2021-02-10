@@ -9,10 +9,19 @@ const books = document.querySelectorAll('.book');
 const titleField = document.querySelector('#book-title');
 const authorField = document.querySelector('#book-author');
 const pagesField = document.querySelector('#book-pages');
+const statusField = document.querySelector('input[name=book-status]');
 
 addButton.addEventListener('click', toggleForm);
 closeButton.addEventListener('click', toggleForm);
 submitButton.addEventListener('click', getLibrary);
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.className === 'delete-button') {
+        deleteDisplay(e.target);
+    }
+    if (e.target && e.target.className === 'status-button') {
+        toggleStatus(e.target);
+    }
+});
 
 function Book(title, author, pages, status) {
     this.title = title
@@ -35,12 +44,10 @@ function toggleForm() {
 }
 
 function getLibrary() {
-    const statusField = document.querySelector('input[name=book-status]:checked');
-    addBookToLibrary(titleField.value, authorField.value, pagesField.value, statusField.value);
+    if (!titleField.value || !authorField.value || !pagesField.value) return
+    addBookToLibrary(titleField.value, authorField.value, pagesField.value, statusField.checked);
     resetDisplay();
-    for (let i = 0; i < library.length; i++) {
-        createDisplay(library[i]);
-    }
+    renderDisplay();
 }
 
 function addBookToLibrary(title, author, pages, status) {
@@ -53,6 +60,12 @@ function resetDisplay() {
     while(mainContainer.firstChild) mainContainer.removeChild(mainContainer.firstChild);
 }
 
+function renderDisplay() {
+    for (let i = 0; i < library.length; i++) {
+        createDisplay(library[i]);
+    }
+}
+
 function createDisplay(obj) {
     const bookContainerDiv = document.createElement('div');
     const bookDiv = document.createElement('div');
@@ -61,8 +74,9 @@ function createDisplay(obj) {
     const pagesDiv = document.createElement('div');
     const buttonsDiv = document.createElement('div');
     const deleteImg = document.createElement('img');
-    const editImg = document.createElement('img');
+    const statusImg = document.createElement('img');
 
+    bookContainerDiv.setAttribute('data', library.indexOf(obj));
     mainContainer.appendChild(bookContainerDiv);
 
     bookDiv.classList.add('book');
@@ -85,9 +99,30 @@ function createDisplay(obj) {
 
     deleteImg.classList.add('delete-button');
     deleteImg.src = 'images/trash.svg';
+    deleteImg.title = 'Delete Book';
     buttonsDiv.appendChild(deleteImg);
 
-    editImg.classList.add('edit-button');
-    editImg.src = 'images/three-dots.svg';
-    buttonsDiv.appendChild(editImg);
+    statusImg.classList.add('status-button');
+    if (obj.status) statusImg.src = 'images/read.svg';
+    else statusImg.src = 'images/notread.svg';
+    buttonsDiv.appendChild(statusImg);
+}
+
+function deleteDisplay(deleteButton) {
+    let indexValue = deleteButton.parentNode.parentNode.getAttribute('data');
+    library.splice(indexValue, 1);
+    resetDisplay();
+    renderDisplay();
+}
+
+function toggleStatus(statusButton) {
+    let indexValue = statusButton.parentNode.parentNode.getAttribute('data');
+    if (library[indexValue].status) {
+        library[indexValue].status = false;
+        statusButton.src = 'images/notread.svg';
+    }
+    else {
+        library[indexValue].status = true;
+        statusButton.src = 'images/read.svg';
+    }
 }

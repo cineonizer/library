@@ -64,6 +64,7 @@ h1 {
     align-items: center;
     margin: 10px auto;
     width: 200px;
+    user-select: none;
 }
 
 .delete-button {
@@ -76,13 +77,13 @@ h1 {
     opacity: 1;
 }
 
-.edit-button {
+.status-button {
     height: 22px;
     cursor: pointer;
     opacity: 0.5;
 }
 
-.edit-button:hover {
+.status-button:hover {
     opacity: 1;
 }
 
