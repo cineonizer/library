@@ -126,3 +126,16 @@ function toggleStatus(statusButton) {
         statusButton.src = 'images/read.svg';
     }
 }
+
+function storeData() {
+    localStorage.setItem('savedLibrary', JSON.stringify(library));
+}
+
+function restoreData() {
+    if (localStorage.savedLibrary) {
+        let retrievedLibrary = localStorage.getItem('savedLibrary');
+        myLibrary = JSON.parse(retrievedLibrary);
+        getLibrary();
+    }
+    else return;
+}
