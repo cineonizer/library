@@ -48,6 +48,7 @@ function getLibrary() {
     addBookToLibrary(titleField.value, authorField.value, pagesField.value, statusField.checked);
     resetDisplay();
     renderDisplay();
+    storeData();
 }
 
 function addBookToLibrary(title, author, pages, status) {
@@ -113,6 +114,7 @@ function deleteDisplay(deleteButton) {
     library.splice(indexValue, 1);
     resetDisplay();
     renderDisplay();
+    storeData();
 }
 
 function toggleStatus(statusButton) {
@@ -125,6 +127,7 @@ function toggleStatus(statusButton) {
         library[indexValue].status = true;
         statusButton.src = 'images/read.svg';
     }
+    storeData();
 }
 
 function storeData() {
@@ -139,3 +142,5 @@ function restoreData() {
     }
     else return;
 }
+
+restoreData();
