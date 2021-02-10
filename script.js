@@ -132,15 +132,14 @@ function toggleStatus(statusButton) {
 
 function storeData() {
     localStorage.setItem('savedLibrary', JSON.stringify(library));
+    console.log(localStorage.savedLibrary)
 }
 
 function restoreData() {
     if (localStorage.savedLibrary) {
-        let retrievedLibrary = localStorage.getItem('savedLibrary');
-        myLibrary = JSON.parse(retrievedLibrary);
-        getLibrary();
+        const retrievedLibrary = localStorage.getItem('savedLibrary');
+        library = JSON.parse(retrievedLibrary);
+        renderDisplay();
     }
-    else return;
+    return;
 }
-
-restoreData();
