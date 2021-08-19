@@ -25,3 +25,4 @@ Create a library app that stores books and their details, such as title, author,
 * Learned the object syntax, object constructors, object prototypes, and overriding object methods.
 * Utilizing the Web Storage API, localStorage, to store key/value pairs on user's computer.
 * Learned about reading and writing in JSON format.
+* Made use of HTML Form element.
