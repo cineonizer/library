@@ -1,6 +1,6 @@
 # Library
 
-This is the [Library](https://www.theodinproject.com/courses/javascript/lessons/library) project from the curriculum of [The Odin Project's Full Stack JavaScript Path](https://www.theodinproject.com/courses/javascript/lessons/library).
+This is the [Library](https://www.theodinproject.com/courses/javascript/lessons/library) project from the curriculum of [The Odin Project's Full Stack JavaScript Path](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript).
 
 #### What is The Odin Project?
 
