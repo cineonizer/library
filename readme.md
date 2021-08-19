@@ -1,4 +1,4 @@
-# Calculator
+# Library
 
 This is a project from the curriculum of [The Odin Project's Full Stack JavaScript Path](https://www.theodinproject.com/courses/javascript/lessons/library).
 
@@ -12,7 +12,7 @@ Click [here](https://cineonizer.github.io/library/) for a live preview of my pro
 
 ## Goal
 
-Create a Library app that stores books and their details, such as title, author, number of pages, and read status, and displays each book on the webpage.
+Create a library app that stores books and their details, such as title, author, number of pages, and read status, and displays each book on the webpage.
 
 ## Built With
 
