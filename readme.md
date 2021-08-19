@@ -12,7 +12,7 @@ Click [here](https://cineonizer.github.io/library/) for a live preview of my pro
 
 ## Goal
 
-Create a library app that stores books and their details, such as title, author, number of pages, and read status, and displays each book on the webpage.
+Create a library app that stores books and their details, such as title, author, number of pages, and read status, and displays them on the webpage in a shelving format.
 
 ## Built With
 
